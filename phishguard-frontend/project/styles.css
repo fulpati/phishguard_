@@ -1,0 +1,136 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color:black;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav .logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: #d0e7ff;
+}
+
+nav .auth-links {
+    display: flex;
+}
+
+nav .auth-links a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav .auth-links a:hover {
+    color: #d0e7ff;
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+.info-section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 768px) {
+    nav .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    nav .nav-links.show {
+        display: flex;
+    }
+
+    nav .auth-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav .auth-links a {
+        margin: 10px 0;
+    }
+}
