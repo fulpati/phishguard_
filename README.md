@@ -15,6 +15,7 @@ PhishGuard is a robust machine learning-based phishing detection system that uti
 ⚡ CUDA acceleration supported for training/prediction
 
 🧪 Dataset Format
+
 The dataset is a CSV file with the following structure:
 
 Email Text	Email Type
@@ -28,9 +29,11 @@ Safe Email → 0
 Phishing Email → 1
 
 🧠 Model Training
+
 We use a pre-trained bert-base-uncased model and fine-tune it using the HuggingFace Transformers library.
 
 🔧 Training Setup
+
 Tokenization using BertTokenizer
 
 Classification model: BertForSequenceClassification
@@ -46,15 +49,21 @@ Loss: CrossEntropyLoss
 Checkpointing: Saved periodically (bert_fine_tuned_checkpoint.pth)
 
 ✍️ To Train:
+
 cd backend/
+
 run bert.ipynb file
+
 Intermediate checkpoints are saved every few batches to handle interruptions.
 
 📈 Evaluation Metrics
+
 The model is evaluated using:
+
 Accuracy, Precision, Recall, F1 Score, Confusion Matrix (Plotted using Seaborn)
 
 🔮 Email Prediction
+
 Run predictions on new email text using:
 
 from predict import predict_email
@@ -63,18 +72,17 @@ email = "Dear user, your account has been compromised. Click here to reset."
 prediction = predict_email(email, model, tokenizer)
 
 print("Phishing" if prediction else "Safe")
-Intermediate predictions for large datasets are saved in progress_checkpoint.csv.
 
 💻 React Frontend
+
 The frontend is built using React.js and interacts with the Python backend via REST APIs. It allows users to input email text and receive phishing/safe predictions with real-time UI feedback.
 
 To Start Frontend:
-bash
-Copy
-Edit
+
 cd frontend/react-app/
 npm install
 npm start
+
 🚀 Deployment
 You can deploy the backend using:
 
@@ -95,12 +103,4 @@ Evaluation: Scikit-learn, Matplotlib, Seaborn
 
 Training: GPU-accelerated fine-tuning, SVM classifier on BERT embeddings
 
-🧪 Future Improvements
-Add multilingual phishing detection
-
-Use DistilBERT or ALBERT for faster inference
-
-Implement email header analysis
-
-Build a browser extension for real-time email scanning
 
