@@ -1,4 +1,5 @@
 🛡️ PhishGuard
+
 PhishGuard is a robust machine learning-based phishing detection system that utilizes BERT (Bidirectional Encoder Representations from Transformers) to classify emails as Safe or Phishing. It features a fine-tuned transformer model on real-world email datasets, integrated with a modern React frontend and Python backend (PyTorch).
 
 🔍 Features
